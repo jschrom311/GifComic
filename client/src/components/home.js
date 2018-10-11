@@ -14,7 +14,7 @@ import {
 } from '../reducers/counter';
 
 const Home = props => (
-  <div>
+  <div className="container-fluid">
     <h1>Home</h1> {props.giph} id {props.id}
 
       <Search searchGiphs={props.searchGiphs} />
