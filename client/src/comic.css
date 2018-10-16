@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   margin:0;
   padding:0;
@@ -168,4 +172,25 @@ html, body {
 .giphy-embed {
   height: auto;
   width: auto;
+}
+
+.giphContainer {
+  float: left;
+}
+
+.container-fluid {
+  /*background-image: url("https://i.pinimg.com/originals/e7/64/f0/e764f0e99ed46e3ae305b654beee3a11.jpg");*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: -webkit-fill-available;
+  height: fill;
+}
+
+#textSelect {
+  display: block;
+}
+
+.navbar {
+  background-color: #FF4306 !important;
 }

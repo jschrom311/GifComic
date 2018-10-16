@@ -79,7 +79,7 @@ export default (state = initialState, action) => {
 export const searchGiphs = entry => {
   return dispatch => {
     console.log(entry);
-    giphy.search({q: entry, limit: 10}).then(function(res) {
+    giphy.search({q: entry, limit: 6}).then(function(res) {
       // Res contains gif data!
   //    console.log(res);
       dispatch({ type: 'GIPH', payload: res.data });

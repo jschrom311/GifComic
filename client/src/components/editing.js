@@ -9,7 +9,7 @@ export default function Editing(props) {
   {
     return (
       <div>
-        <button onClick={()=>props.save(props.editingCard, props.textBox, props.slider, props.textSelect)}>Save</button>
+        <button className="btn btn-light" onClick={()=>props.save(props.editingCard, props.textBox, props.slider, props.textSelect)}>Save</button>
         <br/>
           <label>
             Giph Text:
@@ -49,5 +49,5 @@ export default function Editing(props) {
     </div>
   )
   }
-  return <button onClick={()=>props.edit(props.editingCard)}>{props.butName}</button>
+  return <button className="btn btn-light" onClick={()=>props.edit(props.editingCard)}>{props.butName}</button>
 }
