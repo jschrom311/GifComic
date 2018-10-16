@@ -128,12 +128,22 @@ exports.register = function(req, res, next) {
 
 //Add Entry
 exports.addEntry = function(req, res, next) {
-    console.log('sweet potato');
+    console.log('sweet potato', req.body);
     let entry = new Entry(req.body);
     entry['userId'] = req.user.id;
+    entry.markModified('cards');
     entry.save();
     return res.json({
        data: 'rosebud'
     });
+};
+
+exports.getcards = function(req, res, next) {
+    console.log('sweet tamale', req.body, req.user);
+    Entry.find({'userId':req.user.id}).then(cards=>{
+        return res.json({
+            data: cards
+         });
+    })
 };
 

@@ -7,7 +7,8 @@ const EntrySchema = new Schema({
     journal: String,
     date: String,
     location: Object,
-    userId: String
+    userId: String,
+    cards: Array,
 });
 
 module.exports = mongoose.model('Entry', EntrySchema);

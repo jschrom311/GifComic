@@ -25,4 +25,6 @@ router.post('/refresh', passport.authenticate('jwt', {session: false}), AuthCont
 //Add Entry
 router.post('/add', [passport.authenticate('jwt', {session: false}), jsonParser],UsersController.addEntry);
 
+router.get('/cards', [passport.authenticate('jwt', {session: false}), jsonParser],UsersController.getcards);
+
 module.exports = {router, basicStrategy, jwtStrategy};
