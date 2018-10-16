@@ -6,13 +6,15 @@ import authReducer from './reducers/auth';
 import protectedDataReducer from './reducers/protected-data';
 import {setAuthToken} from './actions/auth';
 import counter from './reducers/counter';
+import allDataReducer from './reducers/allData';
 
 const store = createStore(
     combineReducers({
         form: formReducer,
         auth: authReducer,
         protectedData: protectedDataReducer,
-        counter: counter
+        counter: counter,
+        allData: allDataReducer,
     }),
     applyMiddleware(thunk)
 );

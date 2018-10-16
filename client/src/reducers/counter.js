@@ -1,4 +1,5 @@
 var giphy = require('giphy-api')('rNq8FtmogPXR2ZuiSwncKoSAcTbDVQii');
+import {API_BASE_URL} from '../config';
 
 const initialState = {
   giphs: [],
@@ -75,6 +76,34 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+
+/*export const savecards = (cards) => {
+  console.log(this,cards)
+  return dispatch => {
+    dispatch();
+  }
+}*/
+
+export const savecards = (entry) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  console.log(authToken);
+  console.log(entry);
+  return fetch(`${API_BASE_URL}/add`, {
+      method: 'POST',
+      body: JSON.stringify(entry),
+      headers: {
+          // Provide our auth token as credentials
+          Authorization: `Bearer ${authToken}`,
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+      }
+  })
+  .then((response) => {
+      console.log(response);
+//         // socket.emit('add entry', entries);
+
+    })
+}
 
 export const searchGiphs = entry => {
   return dispatch => {

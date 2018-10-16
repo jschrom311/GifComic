@@ -3,13 +3,16 @@ import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 import {fetchProtectedData} from '../actions/protected-data';
 import Add from "./Add";
+import Cards from "./cards";
 
 export class Dashboard extends React.Component {
     componentDidMount() {
         if (!this.props.loggedIn) {
-            return;
+            //return;
         }
         this.props.dispatch(fetchProtectedData());
+        console.log(this);
+        console.log(this.props.protectedData);
     }
 
     render() {
@@ -24,12 +27,13 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-username">
                     Email: {this.props.email}
                 </div>
-                <div className="dashboard-protected-data">
-                    Protected data: {this.props.protectedData}
-                </div>
                 <br />
+                {this.props.protectedData.map((item, i) => (
+                    <li key = {i}>
+                    <Cards {...item}/>
+                    </li>
+                ))}
                 <Link to="/add">Add Entry</Link>
-                <Add />
                 <Link to="/home">Home</Link>
             </div>
         );

@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {setCurrentUser, setAuthToken} from '../actions/auth';
+import {Link, Redirect} from 'react-router-dom';
 import {clearAuthToken} from '../local-storage';
 
 export class HeaderBar extends React.Component {
@@ -22,6 +23,9 @@ export class HeaderBar extends React.Component {
             <div className="navbar navbar-light bg-light shadow-sm">
                 <a className="navbar-brand" href="#">
                 <img src={require("./gifcomiclogo3.png")} alt="logo" className="img-responsive" width="399" height="74"></img>
+                <Link to='/dashboard'>Profile</Link>
+                <Link to='/home'>Create Comic</Link>
+                <Link to='/'>Home</Link>
                 </a>
                 {logOutButton}
             </div>

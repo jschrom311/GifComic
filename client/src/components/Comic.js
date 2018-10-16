@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Search from './search.js';
@@ -56,4 +56,4 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);*/
