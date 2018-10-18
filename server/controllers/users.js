@@ -128,9 +128,10 @@ exports.register = function(req, res, next) {
 
 //Add Entry
 exports.addEntry = function(req, res, next) {
-    console.log('sweet potato', req.body);
+    console.log('sweet potato', req.body, req.user);
     let entry = new Entry(req.body);
     entry['userId'] = req.user.id;
+    entry['userEmail'] = req.user.email;
     entry.markModified('cards');
     entry.save();
     return res.json({
@@ -142,7 +143,16 @@ exports.getcards = function(req, res, next) {
     console.log('sweet tamale', req.body, req.user);
     Entry.find({'userId':req.user.id}).then(cards=>{
         return res.json({
-            data: cards
+            data: cards.reverse()
+         });
+    })
+};
+
+exports.getallcards = function(req, res, next) {
+    console.log('sweet mama', req.body, req.user);
+    Entry.find({}).then(cards=>{
+        return res.json({
+            data: cards.reverse()
          });
     })
 };

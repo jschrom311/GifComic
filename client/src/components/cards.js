@@ -16,7 +16,7 @@ export default function Cards(props) {
           let num = (Math.floor(Math.random() * 6) + 1) * 100
         return (
           <div onClick={()=>props.selectCard(i)} key={i} className='panel' style={{flexBasis: Number(g.slider)}}>
-          {g.id} slider value{g.slider}
+          {g.id} {g.slider}
 
             <div className="container">
               <iframe

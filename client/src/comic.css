@@ -5,12 +5,18 @@
 html, body {
   margin:0;
   padding:0;
+  /*background-image: url('../backgroundimg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: -webkit-fill-available;
+  height: fill;*/
 }
 
 .comic {
   display:flex;
   flex-wrap:wrap;
-  font-family:'Comic Sans', cursive;
+  font-family: yikes;
   padding:1vmin;
 }
 
@@ -178,14 +184,14 @@ html, body {
   float: left;
 }
 
-.container-fluid {
-  /*background-image: url("https://i.pinimg.com/originals/e7/64/f0/e764f0e99ed46e3ae305b654beee3a11.jpg");*/
+/*.container-fluid {
+  background-image: url("https://i.pinimg.com/originals/e7/64/f0/e764f0e99ed46e3ae305b654beee3a11.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   height: -webkit-fill-available;
   height: fill;
-}
+}*/
 
 #textSelect {
   display: block;
@@ -193,4 +199,37 @@ html, body {
 
 .navbar {
   background-color: #FF4306 !important;
+}
+
+li {
+  list-style-type: none;
+}
+
+@font-face {
+  font-family: bd;
+  src: url('../fonts/baddaboom.TTF')
+}
+
+@font-face {
+  font-family: rk;
+  src: url('../fonts/rkfont.otf')
+}
+
+@font-face {
+  font-family: yikes;
+  src: url('../fonts/yikes.TTF')
+}
+
+h1, h2 {
+  font-family: bd;
+}
+
+p {
+  text-align: center;
+  font-family: yikes;
+}
+
+a {
+  color: white;
+  font-family: bd;
 }

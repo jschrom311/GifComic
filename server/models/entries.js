@@ -9,6 +9,7 @@ const EntrySchema = new Schema({
     location: Object,
     userId: String,
     cards: Array,
+    userEmail: String,
 });
 
 module.exports = mongoose.model('Entry', EntrySchema);

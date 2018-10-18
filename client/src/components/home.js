@@ -16,7 +16,7 @@ import {
 
 const Home = props => (
   <div className="container-fluid">
-    <h1>Home</h1> {props.giph} id {props.id}
+    <h1>Create GifComic</h1> {props.giph} {props.id}
 
       <Search searchGiphs={props.searchGiphs} />
 {props.editingCard}

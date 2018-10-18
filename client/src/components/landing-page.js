@@ -23,19 +23,15 @@ import LoginForm from './login-form';
          return (
              <div>
              <div className="home">
-                    <h2>Welcome to GifComic</h2>
-                    <LoginForm />
-                    <Link to="/register">Register</Link>
-                </div>
-                <Link to="/dashboard">Dashboard</Link>
-                <div className="dashboard-username">
-                    Email: {this.props.email}
+                    <h1>Welcome to GifComic</h1>
+                    <h2>Build your own interactive comic strips using gifs!</h2>
                 </div>
                 <div className="recentcomics">
+                <h2>Check out what other users have been doing</h2>
                 {this.props.allData.map((item, i) => (
                             <li key = {i}>
                             <Cards {...item}/>
-                            <p>Built By {item.userEmail}</p>
+                            <p>Built by {item.userEmail}</p>
                             </li>
                         ))}
                 </div>

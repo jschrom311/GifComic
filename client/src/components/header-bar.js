@@ -25,6 +25,8 @@ export class HeaderBar extends React.Component {
                 <img src={require("./gifcomiclogo3.png")} alt="logo" className="img-responsive" width="399" height="74"></img>
                 <Link to='/dashboard'>Profile</Link>
                 <Link to='/home'>Create Comic</Link>
+                <Link to='/login-form'>Login</Link>
+                <Link to='/registration-form'>Sign up</Link>
                 <Link to='/'>Home</Link>
                 </a>
                 {logOutButton}
