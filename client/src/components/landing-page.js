@@ -27,12 +27,14 @@ import LoginForm from './login-form';
                     <h2>Build your own interactive comic strips using gifs!</h2>
                 </div>
                 <div className="recentcomics">
-                <h2>Check out what other users have been doing</h2>
+                <h2>Check out what other users have been creating below</h2>
                 {this.props.allData.map((item, i) => (
+                            <div className='container-fluid'>
                             <li key = {i}>
                             <Cards {...item}/>
                             <p>Built by {item.userEmail}</p>
                             </li>
+                            </div>
                         ))}
                 </div>
                 </div>

@@ -20,7 +20,7 @@ export class HeaderBar extends React.Component {
             );
         }
         return (
-            <div className="navbar navbar-light bg-light shadow-sm">
+            <div className="navbar navbar-light bg-light shadow-sm" role="navigation">
                 <a className="navbar-brand" href="#">
                 <img src={require("./gifcomiclogo3.png")} alt="logo" className="img-responsive" width="399" height="74"></img>
                 <Link to='/dashboard'>Profile</Link>

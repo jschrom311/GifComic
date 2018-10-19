@@ -33,8 +33,6 @@ export class Dashboard extends React.Component {
                     <Cards {...item}/>
                     </li>
                 ))}
-                <Link to="/add">Add Entry</Link>
-                <Link to="/home">Home</Link>
             </div>
         );
     }
