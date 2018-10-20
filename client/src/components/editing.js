@@ -12,7 +12,7 @@ export default function Editing(props) {
         <button className="btn btn-light" onClick={()=>props.save(props.editingCard, props.textBox, props.slider, props.textSelect)}>Save</button>
         <br/>
           <label>
-            Giph Text:
+            Gif Text:
             <input id="textBox" type="text" onChange={props.handleChange} />
           </label>
 

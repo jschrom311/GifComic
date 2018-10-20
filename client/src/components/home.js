@@ -15,8 +15,8 @@ import {
 } from '../reducers/counter';
 
 const Home = props => (
-  <div className="container-fluid">
-    <h1>Create GifComic</h1> {props.giph} {props.id}
+  <div>
+    <h1><img src={require("./creategifcomic.png")} className="creategifcomic"></img></h1> {/*props.giph} {props.id*/}
 
       <Search searchGiphs={props.searchGiphs} />
 {props.editingCard}
@@ -24,7 +24,7 @@ const Home = props => (
 
       <Cards {...props}/>
 
-<button className="savebutton" onClick={()=>props.savecards(props)}>Save </button>
+<button className="btn btn-light" onClick={()=>props.savecards(props)}>Save </button>
 
   </div>
 );

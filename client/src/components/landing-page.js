@@ -23,7 +23,7 @@ import LoginForm from './login-form';
          return (
              <div>
              <div className="home">
-                    <h1>Welcome to GifComic</h1>
+                    <h1><img src={require("./welcomegifcomic.png")} className="welcomegifcomic"></img></h1>
                     <h2>Build your own interactive comic strips using gifs!</h2>
                 </div>
                 <div className="recentcomics">
