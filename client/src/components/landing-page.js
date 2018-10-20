@@ -24,10 +24,12 @@ import LoginForm from './login-form';
              <div>
              <div className="home">
                     <h1><img src={require("./welcomegifcomic.png")} className="welcomegifcomic"></img></h1>
-                    <h2>Build your own interactive comic strips using gifs!</h2>
+                </div>
+                <div className="introinfo">
+                <h2>Build your own interactive comic strips using gifs!</h2>
+                <h2>Check out what other users have been creating below</h2>
                 </div>
                 <div className="recentcomics">
-                <h2>Check out what other users have been creating below</h2>
                 {this.props.allData.map((item, i) => (
                             <div className='container-fluid'>
                             <li key = {i}>
