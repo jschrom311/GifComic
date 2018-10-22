@@ -16,19 +16,25 @@ export class HeaderBar extends React.Component {
         let logOutButton;
         if (this.props.loggedIn) {
             logOutButton = (
+                <span>
+                <Link to='/dashboard'>Profile</Link>
+                <Link to='/home'>Create Comic</Link>
                 <button onClick={() => this.logOut()}>Log out</button>
+                </span>
             );
+        }
+        else {
+            logOutButton= (
+                <span>
+                <Link to='/login-form'>Login</Link>
+                <Link to='/registration-form'>Sign up</Link>
+                </span>
+            )
         }
         return (
             <div className="navbar navbar-light bg-light shadow-sm" role="navigation">
-                <a className="navbar-brand" href="#">
                 <img src={require("./gifcomiclogo3.png")} alt="logo" className="img-responsive" width="399" height="74"></img>
-                <Link to='/dashboard'>Profile</Link>
-                <Link to='/home'>Create Comic</Link>
-                <Link to='/login-form'>Login</Link>
-                <Link to='/registration-form'>Sign up</Link>
                 <Link to='/'>Home</Link>
-                </a>
                 {logOutButton}
             </div>
         );

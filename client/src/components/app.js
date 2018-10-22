@@ -6,6 +6,7 @@ import LandingPage from './landing-page';
 import Dashboard from './dashboard';
 import Add from './Add';
 import Home from './home';
+import LoginPage from './login-form';
 import RegistrationPage from './registration-page';
 import {refreshAuthToken} from '../actions/auth';
 import Comic from './Comic';
@@ -54,9 +55,10 @@ export class App extends React.Component {
                 <HeaderBar />
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/dashboard" component={Dashboard} />
-                <Route exact path="/register" component={RegistrationPage} />
+                <Route exact path="/registration-form" component={RegistrationPage} />
                 <Route exact path="/add" component={Add} />
                 <Route exact path="/home" component={Home} />
+                <Route exact path="/login-form" component={LoginPage} />
                 <Route exact path="/comic/:comicId" component={Comic}/>
                 <Redirect from='*' to='/'/>
             </div>

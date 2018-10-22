@@ -10,6 +10,7 @@ export default function Cards(props) {
 
 
     return (
+      <div className="comiccards">
       <article className="comic">
       {props.cards.map((g, i) => {
         console.log(g);
@@ -21,7 +22,6 @@ export default function Cards(props) {
             <div className="container">
               <iframe
                 src={g.giph}
-
                 frameBorder="0"
                 className="giphy-embed"
                 allowFullScreen
@@ -38,5 +38,6 @@ export default function Cards(props) {
         )
       })}
     </article>
+    </div>
     );
 };

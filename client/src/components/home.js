@@ -15,17 +15,20 @@ import {
 } from '../reducers/counter';
 
 const Home = props => (
-  <div>
+  <div className="searchpage jumbotron">
     <h1><img src={require("./creategifcomic.png")} className="creategifcomic"></img></h1> {/*props.giph} {props.id*/}
-
+    <div style={ { display: props.editing ? 'block' : 'none' } }  >
       <Search searchGiphs={props.searchGiphs} />
-{props.editingCard}
+      </div>
+      kljsafliasjdfa
+        {/*props.editingCard*/}
+        ABDC
       <Editing {...props} butName={ (props.editingCard === null) ? 'New Cell' : 'edit' }/>
-
+      <h2>Here's your comic!</h2>
+      <br></br>
       <Cards {...props}/>
 
-<button className="btn btn-light" onClick={()=>props.savecards(props)}>Save </button>
-
+<button className="btn btn-light" onClick={()=>props.savecards(props)}>Save</button>
   </div>
 );
 

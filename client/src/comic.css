@@ -192,9 +192,9 @@ html, body {
   width: auto;
 }
 
-.giphContainer {
+/*.giphContainer {
   float: left;
-}
+}*/
 
 #textSelect {
   display: block;
@@ -222,6 +222,11 @@ li {
 @font-face {
   font-family: yikes;
   src: url('../fonts/yikes.TTF')
+}
+
+label {
+  font-family: bd;
+  font-size:  1.5rem;
 }
 
 h1, h2 {
@@ -263,4 +268,19 @@ a {
   width: 40%;
   display: flex;
   margin-bottom: 0;
+}
+
+.jumbotron {
+  border-radius: 25px !important;
+  margin-top: 5px !important;
+  background-image: url("../backgroundimg1.jpg");
+  background-size: cover;
+}
+
+.giphContainer {
+  display: inline-block;
+}
+
+.comiccards {
+  display: block;
 }

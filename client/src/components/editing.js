@@ -9,7 +9,7 @@ export default function Editing(props) {
   {
     return (
       <div>
-        <button className="btn btn-light" onClick={()=>props.save(props.editingCard, props.textBox, props.slider, props.textSelect)}>Save</button>
+        <button className="btn btn-light" onClick={()=>props.save(props.editingCard, props.textBox, props.slider, props.textSelect)}>Add Gif</button>
         <br/>
           <label>
             Gif Text:
@@ -31,7 +31,7 @@ export default function Editing(props) {
         {props.giphs.map((g, i) => {
       //    console.log(g);
           return (
-            <div className="giphContainer" onClick={() => props.selectGiph(g, props.identifyer)}>
+            <div className="giphContainer" className='panel' style={{flexBasis: Number(g.slider)}} onClick={() => props.selectGiph(g, props.identifyer)}>
               <iframe
                 key={i}
                 src={g.embed_url}
