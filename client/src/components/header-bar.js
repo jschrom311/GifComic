@@ -19,7 +19,7 @@ export class HeaderBar extends React.Component {
                 <span>
                 <Link to='/dashboard'>Profile</Link>
                 <Link to='/home'>Create Comic</Link>
-                <button onClick={() => this.logOut()}>Log out</button>
+                <button className="btn btn-light" onClick={() => this.logOut()}>Log out</button>
                 </span>
             );
         }

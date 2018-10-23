@@ -21,6 +21,7 @@ export class RegistrationForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
+                <div className="logform">
                 <label htmlFor="email">Email</label>
                 <Field
                     component={Input}
@@ -33,7 +34,7 @@ export class RegistrationForm extends React.Component {
                     component={Input}
                     type="password"
                     name="password"
-                    validate={[required, length({min: 1, max: 4}), isTrimmed]}
+                    validate={[required, length({min: 4, max: 8}), isTrimmed]}
                 />
                 <label htmlFor="passwordConfirm">Confirm password</label>
                 <Field
@@ -47,6 +48,7 @@ export class RegistrationForm extends React.Component {
                     disabled={this.props.pristine || this.props.submitting}>
                     Register
                 </button>
+                </div>
             </form>
         );
     }
