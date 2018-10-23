@@ -31,7 +31,7 @@ export default function Editing(props) {
         {props.giphs.map((g, i) => {
       //    console.log(g);
           return (
-            <div className="giphContainer" className='panel' style={{flexBasis: Number(g.slider)}} onClick={() => props.selectGiph(g, props.identifyer)}>
+            <div className="giphContainer" className='panel' id="createpanel" style={{flexBasis: Number(g.slider)}} onClick={() => props.selectGiph(g, props.identifyer)}>
               <iframe
                 key={i}
                 src={g.embed_url}

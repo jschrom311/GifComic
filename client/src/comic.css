@@ -34,7 +34,7 @@ html, body {
 
 .panel {
   background-color:#fff;
-  border:solid 2px #000;
+  border:solid 2px black;
   box-shadow:0 6px 6px -6px #000;
   display:inline-block;
   flex:1 1;
@@ -42,6 +42,10 @@ html, body {
   margin:1vmin;
   overflow:hidden; /*originally hidden*/
   position:relative;
+}
+
+div#createpanel:hover {
+  outline: 3px solid black;
 }
 
 .text {
@@ -284,3 +288,10 @@ a {
 .comiccards {
   display: block;
 }
+
+.dashboard-username {
+    font-family: bd;
+    text-align: center;
+    font-size: 1.75rem;
+}
+

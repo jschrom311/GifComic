@@ -24,14 +24,18 @@ export class Dashboard extends React.Component {
         return (
             <div className="dashboard">
                 <br />
-                <div className="dashboard-username">
-                    Email: {this.props.email}
-                </div>
+                <div className="dashboard-username container-fluid">
+                <h1>GifComic Profile</h1>
+                    User: {this.props.email}
                 <br />
+                <h2>Saved Comics:</h2>
+                </div>
                 {this.props.protectedData.map((item, i) => (
+                    <div className="container-fluid">
                     <li key = {i}>
                     <Cards {...item}/>
                     </li>
+                    </div>
                 ))}
             </div>
         );
