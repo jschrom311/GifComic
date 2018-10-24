@@ -4,7 +4,7 @@ import {Route, withRouter, Redirect} from 'react-router-dom';
 import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
-import { connect } from 'net';
+import { connect } from 'react-redux';
 import dashboard from './dashboard';
 
 export class LoginForm extends React.Component {
@@ -13,6 +13,7 @@ export class LoginForm extends React.Component {
     }
     
     render() {
+        console.log(this);
         let error;
         if (this.props.error) {
             error = (
@@ -21,9 +22,9 @@ export class LoginForm extends React.Component {
                 </div>
             );
         }
-        /*if (props.loggedIn) {
+        if (this.props.loggedIn) {
             return <Redirect to="/dashboard" />;
-        }*/
+        }
         return (
             <form
                 className="login-form jumbotron"
@@ -63,13 +64,14 @@ export class LoginForm extends React.Component {
     }
 }
 
-/*const mapStateToProps = state => ({
+const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null,
 });
 
-export class connect{(mapStateToProps)(Dashboard)};*/
-
-export default reduxForm({
+LoginForm = reduxForm({
     form: 'login',
     onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'email'))
 })(LoginForm);
+
+// Then connect the whole with the redux store
+export default connect(mapStateToProps)(LoginForm);

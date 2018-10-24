@@ -15,7 +15,7 @@ import {
 } from '../reducers/counter';
 
 const Home = props => (
-  <div className="searchpage jumbotron">
+  <div className="searchpage jumbotron" id="createcomicpg">
     <h1><img src={require("./creategifcomic.png")} className="creategifcomic"></img></h1> {/*props.giph} {props.id*/}
     <div style={ { display: props.editing ? 'block' : 'none' } }  >
       <Search searchGiphs={props.searchGiphs} />
