@@ -20,9 +20,7 @@ const Home = props => (
     <div style={ { display: props.editing ? 'block' : 'none' } }  >
       <Search searchGiphs={props.searchGiphs} />
       </div>
-      kljsafliasjdfa
         {/*props.editingCard*/}
-        ABDC
       <Editing {...props} butName={ (props.editingCard === null) ? 'New Cell' : 'edit' }/>
       <h2>Here's your comic!</h2>
       <br></br>

@@ -23,7 +23,6 @@ export class Dashboard extends React.Component {
 
         return (
             <div className="dashboard">
-                <br />
                 <div className="dashboard-username container-fluid">
                 <h1>GifComic Profile</h1>
                     User: {this.props.email}

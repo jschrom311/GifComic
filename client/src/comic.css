@@ -159,6 +159,7 @@ div#createpanel:hover {
     padding: 0;
     position: relative;
 }
+
 .container iframe {
     box-sizing: border-box;
     /*height: 56.25vw; */
@@ -231,6 +232,7 @@ li {
 label {
   font-family: bd;
   font-size:  1.5rem;
+  margin-top: 10px;
 }
 
 h1, h2 {
@@ -244,7 +246,7 @@ h2 {
 
 p {
   text-align: center;
-  font-family: yikes;
+  font-family: bd;
   font-size: larger;
 }
 
@@ -259,6 +261,8 @@ a {
   background-image: url("../backgroundimg1.jpg");
   background-size: cover;
   border-radius: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .welcomegifcomic {
@@ -300,3 +304,102 @@ a {
   margin: auto;
 }
 
+@media only screen and (max-width: 600px) {
+  .img-responsive {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .img-responsive {
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 445px) {
+  .img-responsive {
+    width: 225px;
+    height: 70px;
+  }
+}
+
+@media only screen and (max-width: 405px) {
+  .img-responsive {
+    width: 200px;
+    height: 70px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .img-responsive {
+    width: 160px;
+    height: 70px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .img-responsive {
+    width: 125px;
+    height: 60px;
+  }
+}
+
+@media only screen and (min-width: 905px) {
+  .welcomegifcomic{
+    height: 80px;
+  }
+}
+
+@media only screen and (max-width: 876px) {
+  .introinfo {
+    font-size: 1.7rem !important;
+  }
+}
+
+.navbar {
+  display: inline-block !important;
+  width: fill !important;
+  width: -webkit-fill-available !important;
+}
+
+.react-autosuggest__input {
+  font-family: bd;
+  font-size:  1.5rem;
+  margin-bottom: 10px;
+}
+
+#password, #passwordConfirm {
+  margin-bottom: 10px;
+}
+
+#textBox {
+  margin-left: 10px;
+}
+
+.btn {
+  color: black;
+  font-family: bd;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.form-error {
+  font-family: bd;
+}
+
+.pslide {
+  float: left;
+}
+
+#slider {
+  margin-top: 3px;
+  margin-left: 3px;
+}
+
+#pansize {
+  font-family: bd;
+}
+
+.pancap {
+  float: left;
+}

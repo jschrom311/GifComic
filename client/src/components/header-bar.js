@@ -17,8 +17,16 @@ export class HeaderBar extends React.Component {
         if (this.props.loggedIn) {
             logOutButton = (
                 <span>
-                <Link to='/dashboard'>Profile</Link>
-                <Link to='/home'>Create Comic</Link>
+                <Link to='/dashboard'>
+                <button className="btn btn-light" type="button">
+                Profile
+                </button>
+                </Link>
+                <Link to='/home'>
+                <button className="btn btn-light" type="button">
+                Create Comic
+                </button>
+                </Link>
                 <button className="btn btn-light" onClick={() => this.logOut()}>Log out</button>
                 </span>
             );
@@ -26,17 +34,29 @@ export class HeaderBar extends React.Component {
         else {
             logOutButton= (
                 <span>
-                <Link to='/login-form'>Login</Link>
-                <Link to='/registration-form'>Sign up</Link>
+                <Link to='/login-form'>
+                <button className="btn btn-light" type="button">
+                Login
+                </button>
+                </Link>
+                <Link to='/registration-form'>
+                <button className="btn btn-light" type="button">
+                Sign up
+                </button>
+                </Link>
                 </span>
             )
         }
         return (
-            <div className="navbar navbar-light bg-light shadow-sm" role="navigation">
+            <nav className="navbar navbar-light bg-light shadow-sm" role="navigation">
                 <img src={require("./gifcomiclogo3.png")} alt="logo" className="img-responsive" width="399" height="74"></img>
-                <Link to='/'>Home</Link>
+                <Link to='/'>
+                <button className="btn btn-light" type="button">
+                Home
+                </button>
+                </Link>
                 {logOutButton}
-            </div>
+            </nav>
         );
     }
 }

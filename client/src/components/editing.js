@@ -12,15 +12,18 @@ export default function Editing(props) {
         <button className="btn btn-light" onClick={()=>props.save(props.editingCard, props.textBox, props.slider, props.textSelect)}>Add Gif</button>
         <br/>
           <label>
-            Gif Text:
-            <input id="textBox" type="text" onChange={props.handleChange} />
+            Gif Text: 
+             <input id="textBox" type="text" placeholder="Comic caption" onChange={props.handleChange} />
           </label>
 
           <div class="slidecontainer">
+            <p className="pslide">Comic panel size: </p>
             <input type="range" min="200" max="1000" step="100" class="slider" id="slider" onChange={props.handleChange}/>
-            <span>{props.slider}</span>
+            <span id="pansize">{props.slider}</span>
           </div>
-
+          <div className="pancap">
+            <p>Caption position: </p>
+          </div>
           <select id="textSelect" name="textLocation" onChange={props.handleChange}>
             <option value="text top-left">Top Left</option>
             <option value="text bottom-right">Bottom right</option>

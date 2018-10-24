@@ -43,7 +43,7 @@ export class RegistrationForm extends React.Component {
                     name="passwordConfirm"
                     validate={[required, nonEmpty, matches('password')]}
                 />
-                <button
+                <button className="btn btn-light"
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
                     Register

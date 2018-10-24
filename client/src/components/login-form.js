@@ -1,14 +1,17 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
+import {Route, withRouter, Redirect} from 'react-router-dom';
 import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
+import { connect } from 'net';
+import dashboard from './dashboard';
 
 export class LoginForm extends React.Component {
     onSubmit(values) {
         return this.props.dispatch(login(values.email, values.password));
     }
-
+    
     render() {
         let error;
         if (this.props.error) {
@@ -18,6 +21,9 @@ export class LoginForm extends React.Component {
                 </div>
             );
         }
+        /*if (props.loggedIn) {
+            return <Redirect to="/dashboard" />;
+        }*/
         return (
             <form
                 className="login-form jumbotron"
@@ -43,14 +49,25 @@ export class LoginForm extends React.Component {
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <button disabled={this.props.pristine || this.props.submitting}>
+                <button className="btn btn-light" disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button>
+                <br></br>
+                <p>Try it out with:  </p>
+                <p>Email: demo@demo.com</p>
+                <p>Password: demo</p>
+
                 </div>
             </form>
         );
     }
 }
+
+/*const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null,
+});
+
+export class connect{(mapStateToProps)(Dashboard)};*/
 
 export default reduxForm({
     form: 'login',
