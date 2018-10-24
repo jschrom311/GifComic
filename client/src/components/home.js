@@ -26,7 +26,7 @@ const Home = props => (
       <br></br>
       <Cards {...props}/>
 
-<button className="btn btn-light" onClick={()=>props.savecards(props)}>Save</button>
+      <button id="savebutton" className="btn btn-light" onClick={()=>props.savecards(props)}>Save Comic Strip!</button>
   </div>
 );
 

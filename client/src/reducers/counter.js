@@ -1,5 +1,6 @@
 var giphy = require('giphy-api')('rNq8FtmogPXR2ZuiSwncKoSAcTbDVQii');
 import {API_BASE_URL} from '../config';
+import { browserHistory } from 'react-router';
 
 const initialState = {
   giphs: [],
@@ -57,6 +58,13 @@ export default (state = initialState, action) => {
           editing: true
         };
 
+    case 'SAVECARDS':
+        console.log(browserHistory)
+        window.location.reload();  //TEMP FIXME 
+        return {
+          ...state,
+    }
+
     case 'SELECT_CARD':
     console.log(action, state, this);
         return{
@@ -100,6 +108,7 @@ export const savecards = (entry) => (dispatch, getState) => {
   })
   .then((response) => {
       console.log(response);
+      dispatch({ type: 'SAVEDCARDS'}) 
 //         // socket.emit('add entry', entries);
 
     })
@@ -108,7 +117,7 @@ export const savecards = (entry) => (dispatch, getState) => {
 export const searchGiphs = entry => {
   return dispatch => {
     console.log(entry);
-    giphy.search({q: entry, limit: 10}).then(function(res) {
+    giphy.search({q: entry, limit: 6}).then(function(res) {
       // Res contains gif data!
   //    console.log(res);
       dispatch({ type: 'GIPH', payload: res.data });

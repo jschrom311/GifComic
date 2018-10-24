@@ -403,3 +403,60 @@ a {
 .pancap {
   float: left;
 }*/
+
+.react-autosuggest__container{
+    text-align:center;
+}
+
+#createcomicpg button{
+    text-align:center;
+    width: 50%;
+}
+
+.creategifcomic{
+    margin: auto;
+}
+
+#createcomicpg input{
+    text-align:center;
+    margin: 20px 0 auto;
+    width:52%;
+}
+
+@media only screen and (max-width: 600px) {
+
+    #createcomicpg input, #createcomicpg button {
+        width: 100%;
+    }
+
+}
+#textSelect {
+    margin:auto;
+}
+
+#createcomicpg {
+    position:relative;
+    border:2px solid green;
+}
+.input-container{
+    text-align:center;
+}
+
+
+#addGif{
+    display: block;
+    margin: 20px auto 150px auto;
+}
+
+#display-giph{
+    margin:50px;
+}
+
+.comiccards button{
+    margin: auto;
+}
+
+#savebutton, #newCell {
+    margin:auto;
+    display:block;
+} 
