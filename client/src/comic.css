@@ -432,6 +432,13 @@ a {
 }
 #textSelect {
     margin:auto;
+    font-family: bd;
+    font-size: 1.5rem;
+}
+
+#textBox {
+  font-family: bd;
+  font-size: 1.5rem;
 }
 
 #createcomicpg {
