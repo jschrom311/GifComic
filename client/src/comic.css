@@ -378,7 +378,7 @@ a {
 
 .btn {
   color: black;
-  font-family: bd;
+  /*font-family: bd;*/
   padding-left: 10px;
   padding-right: 10px;
 }
