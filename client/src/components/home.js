@@ -12,6 +12,7 @@ import {
   selectCard,
   handleChange,
   savecards,
+  removecards,
 } from '../reducers/counter';
 
 const Home = props => (
@@ -25,8 +26,13 @@ const Home = props => (
       <h2>Here's your comic!</h2>
       <br></br>
       <Cards {...props}/>
-
+      <div style={ {display: props.editing ? 'block' : 'none'} } > 
+      <button id ="removebutton" className="btn btn-light" onClick={()=> this.removecards()}>Remove a panel</button>
+      </div>
+      <br></br>
       <button id="savebutton" className="btn btn-light" onClick={()=>props.savecards(props)}>Save Comic Strip!</button>
+
+      
   </div>
 );
 
@@ -53,6 +59,7 @@ const mapDispatchToProps = dispatch =>
       selectCard,
       handleChange,
       savecards,
+      removecards,
     },
     dispatch
   );
