@@ -17,20 +17,20 @@ import {
 
 const Home = props => (
   <div className="searchpage jumbotron" id="createcomicpg">
-    <h1><img src={require("./creategifcomic.png")} className="creategifcomic"></img></h1> {/*props.giph} {props.id*/}
+    {/*<h1><img src={require("./creategifcomic.png")} className="creategifcomic"></img></h1> {/*props.giph} {props.id*/}
+    <h2>Here's your comic!</h2>
+      <br></br>
+      <Cards {...props}/>
     <div style={ { display: props.editing ? 'block' : 'none' } }  >
       <Search searchGiphs={props.searchGiphs} />
       </div>
         {/*props.editingCard*/}
       <Editing {...props} butName={ (props.editingCard === null) ? 'New Cell' : 'edit' }/>
-      <h2>Here's your comic!</h2>
-      <br></br>
-      <Cards {...props}/>
-      <div style={ {display: props.editing ? 'block' : 'none'} } > 
+      {/*<div style={ {display: props.editing ? 'block' : 'none'} } > 
       <button id ="removebutton" className="btn btn-light" onClick={()=> this.removecards()}>Remove a panel</button>
       </div>
-      <br></br>
-      <button id="savebutton" className="btn btn-light" onClick={()=>props.savecards(props)}>Save Comic Strip!</button>
+<br></br>*/}
+<button id="savebutton" className="btn btn-light" onClick={()=>props.savecards(props)}>Save Comic Strip!</button>
 
       
   </div>
@@ -46,7 +46,8 @@ const mapStateToProps = state => (
   editingCard: state.counter.editingCard,
   textBox: state.counter.textBox,
   slider: state.counter.slider,
-  textSelect: state.counter.textSelect
+  textSelect: state.counter.textSelect,
+  selectedCard: state.counter.selectedCard
 });
 
 const mapDispatchToProps = dispatch =>

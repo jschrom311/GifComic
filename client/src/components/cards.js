@@ -14,9 +14,11 @@ export default function Cards(props) {
       <article className="comic">
       {props.cards.map((g, i) => {
         console.log(g);
+        let style = {flexBasis: Number(g.slider)}
+        props.editingCard == i ? style.border = '10px solid white': ''
           let num = (Math.floor(Math.random() * 6) + 1) * 100
         return (
-          <div onClick={()=>props.selectCard(i)} key={i} className='panel' style={{flexBasis: Number(g.slider)}}>
+          <div onClick={()=>props.selectCard(i)} key={i} className='panel' style={style}>
           {g.id} {g.slider}
 
             <div className="container">

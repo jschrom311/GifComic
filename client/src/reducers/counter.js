@@ -11,7 +11,8 @@ const initialState = {
   id: 0,
   editingCard: null,
   slider: 200,
-  textSelect: 'text top-left'
+  textSelect: 'text top-left',
+  selectedCard: false
 };
 
 export default (state = initialState, action) => {
@@ -46,7 +47,7 @@ export default (state = initialState, action) => {
     }
         return {
           ...state,
-          editing:false,
+          editing: true,
           cards: newCards
           // cards: [...state.cards, {giph:state.giph, id:state.id, text:state.text}]
         };
@@ -59,8 +60,9 @@ export default (state = initialState, action) => {
         };
 
     case 'SAVECARDS':
-        console.log(browserHistory)
-        window.location.reload();  //TEMP FIXME 
+        console.log(action, state)
+        //window.location.reload();  //TEMP FIXME 
+        action.entry.history.push('/dashboard')
         return {
           ...state,
     }
@@ -69,7 +71,8 @@ export default (state = initialState, action) => {
     console.log(action, state, this);
         return{
           ...state,
-          editingCard: action.id === state.editingCard ? null : action.id
+          editingCard: action.id === state.editingCard ? null : action.id,
+          selectedCard: true
         };
 
     case 'HANDLE_CHANGE':
@@ -108,7 +111,7 @@ export const savecards = (entry) => (dispatch, getState) => {
   })
   .then((response) => {
       console.log(response);
-      dispatch({ type: 'SAVEDCARDS'}) 
+      dispatch({ type: 'SAVECARDS', entry : entry}) 
 //         // socket.emit('add entry', entries);
 
     })
@@ -125,7 +128,9 @@ export const searchGiphs = entry => {
   };
 };
 
-export const selectGiph = (giph, i) =>
+
+/*
+  export const selectGiph = (giph, i) =>
 {
   return dispatch =>
   {
@@ -133,14 +138,29 @@ export const selectGiph = (giph, i) =>
     dispatch({type: "SELECT", payload: giph.embed_url, id: i});
   }
 }
-
-export const save = (id, textBox, slider, textSelect) =>
+  
+  export const save = (id, textBox, slider, textSelect) =>
 {
   console.log("saving id " + id)
   return dispatch =>
   {
     console.log(textBox);
     dispatch({type:'SAVE', id: id, textBox: textBox, slider:slider, textSelect: textSelect})
+  }
+}*/
+
+export const selectGiph = (giph, props) =>
+{
+  return dispatch =>
+  {
+    console.log(giph, props);
+    dispatch({type: "SELECT", payload: giph.embed_url, id: props.identifyer});
+    if (props.editingCard == null) {
+      dispatch({type:'SAVE', id: props.identifyer, textBox: giph.textBox})
+    }
+    else {
+      dispatch({type:'SAVE', id: props.editingCard, textBox: giph.textBox})
+    }
   }
 }
 
@@ -160,8 +180,28 @@ export const selectCard = (id) =>
   return dispatch =>
   {
     dispatch({type: 'SELECT_CARD', id: id});
+    //dispatch({type:'EDIT', id: id});
   }
 }
+
+/*export const edit = (id) =>
+{
+  console.log('edit id' + id)
+  return dispatch =>
+  {
+    console.log('editing id' + id);
+    dispatch({type:'EDIT', id: id})
+  }
+}
+
+export const selectCard = (id) =>
+{
+  console.log('selectCard id ' + id);
+  return dispatch =>
+  {
+    dispatch({type: 'SELECT_CARD', id: id});
+  }
+}*/
 
 export const handleChange = (event) =>
 {

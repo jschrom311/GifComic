@@ -150,7 +150,7 @@ exports.getcards = function(req, res, next) {
 
 exports.getallcards = function(req, res, next) {
     console.log('sweet mama', req.body, req.user);
-    Entry.find({}).limit(1).then(cards=>{
+    Entry.find({}).sort(-1).limit(5).then(cards=>{
         return res.json({
             data: cards.reverse()
          });
