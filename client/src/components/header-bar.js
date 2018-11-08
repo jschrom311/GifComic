@@ -55,6 +55,11 @@ export class HeaderBar extends React.Component {
                 Home
                 </button>
                 </Link>
+                {/*<Link to='/about'>
+                <button className="btn btn-light" type="button">
+                About
+                </button>
+        </Link>*/}
                 {logOutButton}
             </nav>
         );

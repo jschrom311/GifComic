@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Search from './search.js';
 import Cards from './cards';
 import Editing from './editing';
+//import {removeCards} from '../actions/protected-data';
 import {
   searchGiphs,
   selectGiph,
@@ -12,12 +13,12 @@ import {
   selectCard,
   handleChange,
   savecards,
-  removecards,
+  removeCard,
 } from '../reducers/counter';
 
 const Home = props => (
   <div className="searchpage jumbotron" id="createcomicpg">
-    {/*<h1><img src={require("./creategifcomic.png")} className="creategifcomic"></img></h1> {/*props.giph} {props.id*/}
+    <h1><img src={require("./creategifcomic.png")} className="creategifcomic"></img></h1> {/*props.giph} {props.id}*/}
     <h2>Here's your comic!</h2>
       <br></br>
       <Cards {...props}/>
@@ -60,7 +61,7 @@ const mapDispatchToProps = dispatch =>
       selectCard,
       handleChange,
       savecards,
-      removecards,
+      removeCard,
     },
     dispatch
   );

@@ -141,18 +141,28 @@ exports.addEntry = function(req, res, next) {
 
 exports.getcards = function(req, res, next) {
     console.log('sweet tamale', req.body, req.user);
-    Entry.find({'userId':req.user.id}).then(cards=>{
+    Entry.find({'userId':req.user.id}).sort({$natural:-1}).limit(5).then(cards=>{
         return res.json({
-            data: cards.reverse()
+            data: cards
+         });
+    })
+};
+
+
+exports.deletecard = function(req, res, next) {
+    console.log('sweet tomato', req.body, req.user);
+    Entry.remove({_id:req.body.id}).then(cards=>{
+        return res.json({
+            data: cards
          });
     })
 };
 
 exports.getallcards = function(req, res, next) {
     console.log('sweet mama', req.body, req.user);
-    Entry.find({}).sort(-1).limit(5).then(cards=>{
+    Entry.find({}).sort({$natural:-1}).limit(5).then(cards=>{
         return res.json({
-            data: cards.reverse()
+            data: cards
          });
     })
 };

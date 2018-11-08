@@ -27,6 +27,8 @@ router.post('/add', [passport.authenticate('jwt', {session: false}), jsonParser]
 
 router.get('/cards', [passport.authenticate('jwt', {session: false}), jsonParser],UsersController.getcards);
 
+router.delete('/cards', [passport.authenticate('jwt', {session: false}), jsonParser],UsersController.deletecard);
+
 router.get('/allcards',jsonParser,UsersController.getallcards);
 
 module.exports = {router, basicStrategy, jwtStrategy};

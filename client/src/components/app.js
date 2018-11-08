@@ -10,6 +10,7 @@ import LoginPage from './login-form';
 import RegistrationPage from './registration-page';
 import {refreshAuthToken} from '../actions/auth';
 import Comic from './Comic';
+import About from './about';
 
 export class App extends React.Component {
     componentDidMount() {
@@ -60,6 +61,7 @@ export class App extends React.Component {
                 <Route exact path="/home" component={Home} />
                 <Route exact path="/login-form" component={LoginPage} />
                 <Route exact path="/comic/:comicId" component={Comic}/>
+                <Route exact path="/about" component={About} />
                 <Redirect from='*' to='/'/>
             </div>
         );

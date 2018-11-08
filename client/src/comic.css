@@ -471,3 +471,13 @@ a {
   margin: auto;
   display: block;
 }
+
+.remove {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: red;
+  font-size: 24px;
+  z-index: 100;
+}

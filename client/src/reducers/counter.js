@@ -82,10 +82,19 @@ export default (state = initialState, action) => {
     console.log(thing);
         return {...thing};
 
+        case 'REMOVE_CARD':
+        console.log(action, state);
+        let cards = [...state.cards];
+        cards.splice(action.id, 1)
+          return {
+            ...state,
+            cards: cards
+          }
 
     default:
       return state;
   }
+
 };
 
 /*export const savecards = (cards) => {
@@ -184,6 +193,16 @@ export const selectCard = (id) =>
   }
 }
 
+export const removeCard = (id) =>
+{
+  console.log('removeCard id ' + id);
+  return dispatch =>
+  {
+    dispatch({type: 'REMOVE_CARD', id: id});
+    //dispatch({type:'EDIT', id: id});
+  }
+}
+
 /*export const edit = (id) =>
 {
   console.log('edit id' + id)
@@ -201,7 +220,10 @@ export const selectCard = (id) =>
   {
     dispatch({type: 'SELECT_CARD', id: id});
   }
-}*/
+}
+
+export const removeCards = 
+*/
 
 export const handleChange = (event) =>
 {

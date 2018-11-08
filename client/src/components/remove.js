@@ -4,6 +4,9 @@
 export default function removeCards(props){
 }
 
+removeCards : function (i) {
+  delete this.state.cards[]
+
 removeCards : function(i) {
     console.log(i);
     delete this.state.cards[i];
