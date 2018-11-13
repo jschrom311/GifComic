@@ -19,6 +19,7 @@ import {
 const Home = props => (
   <div className="searchpage jumbotron" id="createcomicpg">
     <h1><img src={require("./creategifcomic.png")} className="creategifcomic"></img></h1> {/*props.giph} {props.id}*/}
+    <p>Quick tips: Search for a gif.  Enter a caption.  Click on a created comic panel to edit or remove.</p>
     <h2>Here's your comic!</h2>
       <br></br>
       <Cards {...props}/>
