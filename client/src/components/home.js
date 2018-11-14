@@ -19,7 +19,9 @@ import {
 const Home = props => (
   <div className="searchpage jumbotron" id="createcomicpg">
     <h1><img src={require("./creategifcomic.png")} className="creategifcomic"></img></h1> {/*props.giph} {props.id}*/}
-    <p>Quick tips: Search for a gif.  Enter a caption.  Click on a created comic panel to edit or remove.</p>
+    <br></br>
+    <p> | Search for a gif | Enter a caption | Click to edit or remove | </p>
+    <br></br>
     <h2>Here's your comic!</h2>
       <br></br>
       <Cards {...props}/>
@@ -32,6 +34,7 @@ const Home = props => (
       <button id ="removebutton" className="btn btn-light" onClick={()=> this.removecards()}>Remove a panel</button>
       </div>
 <br></br>*/}
+<br></br>
 <button id="savebutton" className="btn btn-light" onClick={()=>props.savecards(props)}>Save Comic Strip!</button>
 
       
